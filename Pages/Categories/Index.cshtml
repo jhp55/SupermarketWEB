@@ -1,0 +1,35 @@
+﻿@page
+@model SupermarketWEB.Pages.Categories.IndexModel
+@{
+	ViewData["title"] = "Index Categories";
+}
+<h1>Index Categories</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(Model => Model.Categories[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.Categories[0].Description)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Item in Model.Categories)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => Item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => Item.Description)
+                </td>
+                <td>
+                    <span></span>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
