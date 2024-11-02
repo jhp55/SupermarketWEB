@@ -47,7 +47,7 @@ namespace SupermarketWEB.Pages.Pay_Mode
 
 			if (payMode != null)
 			{
-				payMode = payMode;
+				PayMode = payMode;
 				_context.PayModes.Remove(payMode);
 				await _context.SaveChangesAsync();
 			}
