@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using SupermarketWEB.Data;
 using SupermarketWEB.Models;
@@ -17,9 +18,12 @@ namespace SupermarketWEB.Pages.Products
 
 		[BindProperty]
 		public Product Product { get; set; } = default!;
+		public SelectList Categories { get; set; } = default!;
 
 		public async Task<IActionResult> OnGetAsync(int? id)
 		{
+			Categories = new SelectList(await _context.Categories.ToListAsync(), "Id", "Name");
+
 			if (id == null || _context.Products == null)
 			{
 				return NotFound();
