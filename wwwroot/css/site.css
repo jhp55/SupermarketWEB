@@ -18,5 +18,14 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-image: url('/Content/fondo.png'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+}
+
+#styNav {
+    background-color: darkgrey;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
