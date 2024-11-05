@@ -7,46 +7,48 @@
 
 <h4>Customer</h4>
 <hr />
-<div class="row">
-	<div class="col-md-4">
+<div class="container ">
+	<div class="row">
 		<form method="post">
 			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
-			<div class="form-group">
+			<div class="row">
+			<div class="form-group col-3">
 				<label asp-for="Customer.Document_Number" class="control-label"></label>
 				<input asp-for="Customer.Document_Number" class="form-control" />
 				<span asp-validation-for="Customer.Document_Number" class="text-danger"></span>
 			</div>
-			<div class="form-group">
+				<div class="form-group col-3">
 				<label asp-for="Customer.First_Name" class="control-label"></label>
 				<input asp-for="Customer.First_Name" class="form-control" />
 				<span asp-validation-for="Customer.First_Name" class="text-danger"></span>
 			</div>
-			<div class="form-group">
+				<div class="form-group col-3">
 				<label asp-for="Customer.Last_Name" class="control-label"></label>
 				<input asp-for="Customer.Last_Name" class="form-control" />
 				<span asp-validation-for="Customer.Last_Name" class="text-danger"></span>
 			</div>
-			<div class="form-group">
+				<div class="form-group col-3">
 				<label asp-for="Customer.Address" class="control-label"></label>
 				<input asp-for="Customer.Address" class="form-control" />
 				<span asp-validation-for="Customer.Address" class="text-danger"></span>
 			</div>
-			<div class="form-group">
+				<div class="form-group col-4">
 				<label asp-for="Customer.birthday" class="control-label"></label>
 				<input asp-for="Customer.birthday" class="form-control" />
 				<span asp-validation-for="Customer.birthday" class="text-danger"></span>
 			</div>
-			<div class="form-group">
+				<div class="form-group col-4">
 				<label asp-for="Customer.Phone_Number" class="control-label"></label>
 				<input asp-for="Customer.Phone_Number" class="form-control" />
 				<span asp-validation-for="Customer.Phone_Number" class="text-danger"></span>
 			</div>
-			<div class="form-group">
+				<div class="form-group col-4">
 				<label asp-for="Customer.Email" class="control-label"></label>
 				<input asp-for="Customer.Email" class="form-control" />
 				<span asp-validation-for="Customer.Email" class="text-danger"></span>
+				</div>
 			</div>
-			<div class="form-group mt-3">
+			<div class="form-group mt-3 text-center">
 				<input type="submit" value="Create" class="btn btn-success" />
 				<a asp-page="Index" class="btn btn-primary">Back to List</a>
 			</div>
