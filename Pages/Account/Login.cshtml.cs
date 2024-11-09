@@ -24,13 +24,13 @@ namespace SupermarketWEB.Pages.Account
         {
             if (!ModelState.IsValid) return Page();
 
-            // Asegúrate de que la colección de usuarios esté bien nombrada como 'Users'
+           
             var user = await _context.User
                 .FirstOrDefaultAsync(u => u.Email == User.Email && u.Password == User.Password);
 
             if (user != null)
             {
-                // Usuario encontrado, crea los claims
+               
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Email, user.Email),
@@ -40,12 +40,12 @@ namespace SupermarketWEB.Pages.Account
                 var identity = new ClaimsIdentity(claims, "MyCookieAuth");
                 ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(identity);
 
-                // Autentica al usuario con una cookie
+                
                 await HttpContext.SignInAsync("MyCookieAuth", claimsPrincipal);
                 return RedirectToPage("/Index");
             }
 
-            // Si no se encuentran coincidencias en la base de datos, muestra un mensaje de error
+           
             ModelState.AddModelError(string.Empty, "Credenciales inválidas.");
             return Page();
         }
