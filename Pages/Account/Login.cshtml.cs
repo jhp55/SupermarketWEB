@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore; // Asegúrate de tener esta línea
+using Microsoft.EntityFrameworkCore;
 using SupermarketWEB.Data;
 using SupermarketWEB.Models;
 using System.Security.Claims;
@@ -33,7 +33,6 @@ namespace SupermarketWEB.Pages.Account
                
                 var claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Email, user.Email),
                     new Claim(ClaimTypes.Email, user.Email),
                 };
 
